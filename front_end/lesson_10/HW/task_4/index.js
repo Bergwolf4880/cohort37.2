@@ -11,7 +11,7 @@
 
 
 let num = 17;
-let array = simpleNumSum(num);
+let array = simpleNumToArray(num);
 
 console.log(array);
 
@@ -31,7 +31,7 @@ function isSimple(num) {
 }
 
 
-function simpleNumSum(num) {
+function simpleNumToArray(num) {
     let temp = [];
     for (let i = 2; i < num; i++) {
         if (isSimple(i)) {
