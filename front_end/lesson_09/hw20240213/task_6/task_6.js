@@ -9,7 +9,7 @@ const str = "Итак, самое длинное научное название
 
 let temp = "";
 for (let i = 0; i < str.length; i++) {
-    if (str[i] !== "," && str[i] !== ":" && str[i] !== ".") {
+    if (str[i] != "," && str[i] != ":" && str[i] != ".") {
         temp += str[i];
     }
 }
@@ -17,6 +17,5 @@ let res = temp.split(" ");
 for(let i = 0; i<res.length;i++){
     console.log(res[i]);
 }
-
 
 
