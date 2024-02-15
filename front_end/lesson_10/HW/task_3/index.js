@@ -6,17 +6,20 @@
 // 3. На заданном промежутке ф-ция должна найти и сложить все четные числа и вернуть сумму
 
 
-console.log(summEven(1, 7));
+console.log(summEven(1.5, 7));
 
 
 function summEven(a, b) {
+    
+    a = Math.floor(a);
+    b = Math.floor(b);
     let diff = 0;
-
+    
     for (let i = a; i <= b; i++) {
         if (i % 2 == 0) {
-            diff = diff+i;
+            diff += i;
         }
     }
-    return Math.floor(diff);
+    return diff;
 }
 

@@ -19,8 +19,6 @@ let nums = isSimple(num) ?  console.log(`Number ${num} is a simple number`)
                             : console.log(`Number ${num} is not a simple number`);
 
 
-
-
 function isSimple(num) {
     if (num < 2) return false;
     if (num === 2) return true;
@@ -29,7 +27,6 @@ function isSimple(num) {
         if (num % i === 0) return false;
     return true;
 }
-
 
 function simpleNumToArray(num) {
     let temp = [];
