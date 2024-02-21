@@ -2,6 +2,7 @@
 // Пример работы функции:
 
 // { a: 'a', '36.6': 36.6, 'John Doe': 'John Doe' } ==> 'a, 36.6, John Doe'
+let obj = { a: 'a', '36.6': 36.6, 'John Doe': 'John Doe' };
 
 function objToStr(obj) {
     let str = "";
@@ -16,10 +17,7 @@ function objToStr2(obj){
     let value = Object.values(obj);
     return value.join(', ');
 }
+// console.log(objToStr(obj));
+// console.log(objToStr2(obj));
 
 
-
-let obj = { a: 'a', '36.6': 36.6, 'John Doe': 'John Doe' };
-
-console.log(objToStr(obj));
-console.log(objToStr2(obj));
