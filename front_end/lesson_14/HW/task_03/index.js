@@ -17,7 +17,16 @@ function objToStr2(obj){
     let value = Object.values(obj);
     return value.join(', ');
 }
+
+
+const functionGetValuesInStzring = (obj) => { Object.values(obj).join(' ');}
+
+functionGetValuesInStzring(obj);
+
+
+
 // console.log(objToStr(obj));
 // console.log(objToStr2(obj));
+
 
 
