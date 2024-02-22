@@ -13,67 +13,58 @@ let todoList = [
     {task: "Подарить цветы подруге", done: true, deadline: "2024-02-21"},
     {task: "Поиграть в видеоигры", done: false, deadline: "2024-02-27"},
     {task: "Послать резюме", done: true, deadline: "2024-02-20"},
-    {task: "Поехать в отпуск", done: false, deadline: "2024-02-29"}
+    {task: "Поехать в отпуск", done: false, deadline: "2024-02-29"},
+    {task: "Поехать в отпуск", done: false},
   ];
 
- //const listItemTwoElement = document.querySelector('#second-item');
+ 
+const listItemTwoElement = document.querySelector('list-item');
+const inputElement = document.querySelector('.task-input');
+const createButton = document.querySelector('.btn');
+let userInputText;
 
+const createButtonHandler = () => {
+    const newListItem = document.createElement('li');
+    newListItem.classList.add('list-item');
+    newListItem.textContent = userInputText;
+    const listAllElements = document.querySelector('.list');
+    listAllElements.append(newListItem);
+}
 
-// const inputElement = document.querySelector('.task-input');
-// const createButton = document.querySelector('.btn');
-// let userInputText;
+const arrayLoop = (element) => {
 
-// const createButtonHandler = () => {
-//     const newListItem = document.createElement('li');
-//     newListItem.classList.add('list-item');
-//     newListItem.textContent = userInputText;
-//     const listAllElements = document.querySelector('.list');
-//     listAllElements.append(newListItem);
-// }
-
-// createButton.addEventListener('click', createButtonHandler); // когда заккоментирована выдаёт весь массив
-
-function arrayLoop(){
-
-    for(let i = 0; i<iterateArray.length; i++){
         const newListItem = document.createElement('li');
         newListItem.classList.add('list-item');
-        newListItem.textContent =  iterateArray[i];
-        if(todoList[i].done === true){
+        newListItem.textContent =  element['task'];
+        if(element['done'] === true){
             newListItem.classList.add('list-item_done');
+        } else {
+
         }
         const listAllElements = document.querySelector('.list');
         listAllElements.append(newListItem);
-    }
+
 }
 
-const iterateArray = todoList.map( element => { return element.task} );
+todoList.forEach(arrayLoop);
 
 
-
-arrayLoop();
-
-
-// const listItemTwoHandler = () => {
-//     listItemTwoElement.textContent = filteredArray;
-//     listItemTwoElement.classList.toggle('list-item_done');
+const listItemTwoHandler = () => {
+    listItemTwoElement.textContent = todoList['done'];
+    listItemTwoElement.classList.toggle('list-item_done');
     
-// }
+}
+
+const inputHandler = () => {
+userInputText = inputElement.value;
+
+}
+
 
 //listItemTwoElement.addEventListener('click', listItemTwoHandler);
+inputElement.addEventListener('input', inputHandler);
+createButton.addEventListener('click', createButtonHandler);
 
-
-// const inputHandler = () => {
-//     // console.log(evt);
-//     // userInputText = evt.target.value;
-//     userInputText = inputElement.value;
-
-// }
-
-// inputElement.addEventListener('input', inputHandler);
-
-
-// const btnHandler = (evt) => {
-//     evt.preventDefault();
-
-// }
+const btnHandler = (evt) => {
+    evt.preventDefault();
+}
