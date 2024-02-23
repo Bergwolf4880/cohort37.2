@@ -27,7 +27,7 @@ const showUndoneButton = document.querySelector('#not_completed');
 const updateList = (array) => {                                     //параметром (array) является наш массив
     listAllElements.innerHTML = '';                                 //стирает весь список который уже есть (если он есть)
     
-    array.sort((a, b) => a.done - b.done);    // сортирует список что бы выполненный задачи группировались снизу
+    array.sort((a, b) => a.done - b.done);                          // сортирует список что бы выполненный задачи группировались снизу
     
     array.forEach(element => {                                      //и содержимое цикла отвечает за создание списка с нуля
         const newListItem = document.createElement('li');           //создаётся ячейка (элемент 'li')
@@ -42,11 +42,12 @@ const updateList = (array) => {                                     //парам
 }
 
 const createButtonHandler = () => {
+                                                                    // TODO добавить проверку на пустую строку
     const newEntry = {task: inputElement.value, done: false};
     todoList.push(newEntry);
     inputElement.value = '';                                        //обнуляет поле ввода после нажатия кнопки создать
     updateList(todoList);
-    // console.log(todoList);
+    
 }
 
 const listItemClickHandler = (event) => {                           //отвечает за зачеркивание тасков списка и обратно
