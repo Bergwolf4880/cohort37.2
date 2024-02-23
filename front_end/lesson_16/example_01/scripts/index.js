@@ -26,6 +26,9 @@ const showUndoneButton = document.querySelector('#not_completed');
 
 const updateList = (array) => {                                     //параметром (array) является наш массив
     listAllElements.innerHTML = '';                                 //стирает весь список который уже есть (если он есть)
+    
+    array.sort((a, b) => a.done - b.done);    // сортирует список что бы выполненный задачи группировались снизу
+    
     array.forEach(element => {                                      //и содержимое цикла отвечает за создание списка с нуля
         const newListItem = document.createElement('li');           //создаётся ячейка (элемент 'li')
         newListItem.classList.add('list-item');                     //добавляется ячейке (элементу 'li') класс (list-item) 
