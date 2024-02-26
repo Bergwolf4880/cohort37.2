@@ -41,7 +41,7 @@ return letters;
 console.log(hasLetter(names));
 
 
-const hasLetter1 = names.filter(name => )
+
 
 
 // console.log(player.hasOwnProperty('result'));
