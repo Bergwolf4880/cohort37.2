@@ -13,7 +13,7 @@ return array.filter(element => element[0].toLowerCase().includes('a'));
 
 
 
-const checkFirstAchar = string => string[0].toLowerCase().includes('a')
+const checkFirstAchar = string => string.toLowerCase().startsWith('a')
 
 const filteredNames = (array) => {
 return array.filter(checkFirstAchar);
