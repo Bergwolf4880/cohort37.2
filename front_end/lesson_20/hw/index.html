@@ -7,13 +7,18 @@
     <title>Countdown Timer</title>
     <link rel="stylesheet" href="./styles/style.css">
     <script src="./script/index.js" defer></script>
+    <audio id="countdown_done">
+        <source src="./sound/hype air horn.mp3">
+    </audio>
 </head>
 
 <body>
     <div class="timer_container">
-        <div id="countdown_monitor">1</div>
-        <input type="text" id="input_field">
-        <button type="submit" id="">start countdown</button>
+        <h1 id="countdown_monitor"></h1>
+        <div class="input_submit">
+        <input type="text" id="input_field" placeholder="countdown timer">
+        <button type="submit" id="start">RUN TIMER</button>
+         </div>
     </div>
 </body>
 
