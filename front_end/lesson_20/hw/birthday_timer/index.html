@@ -1,19 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./script/index.js" defer></script>
     <title>Таймер обратного отсчета</title>
 </head>
+
 <body>
-    <div class="countdown">
-        <span id="days"></span> дней
-        <span id="hours"></span> часов
-        <span id="minutes"></span> минут
-        <span id="seconds"></span> секунд
+    <div class="circles">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+        <div class="circle circle-4"></div>
+    </div>
+    <div class="countdown_box">
+        <div class="countdown">
+            <div class="act_countdown">
+                <div id="days"></div>
+                <div id="hours"></div>
+                <div id="minutes"></div>
+                <div id="seconds"></div> 
+            </div>
+            <div class="units">
+                <div id="days1">days</div>
+                <div id="hours1">hours</div>
+                <div id="minutes1">minutes</div>
+                <div id="seconds1">seconds</div>
+            </div>
+        </div>
+        <div class="input_submit">
+            <input class="btn" id="countdownDate" type="date"><br>
+            <button class="btn" id="submit" onclick="setCountdown()">Set date</button>
+        </div>
     </div>
 
-    <script src="script.js"></script>
 </body>
+
 </html>
