@@ -1,5 +1,11 @@
 function setCountdown() {
     const inputDate = document.getElementById("countdownDate").value;
+    const inputTime = document.getElementById("inputField").value;
+    if (!inputDate&& !inputTime) {
+        alert("Пожалуйста, выберите дату!");
+        return;
+    }
+
     const countdownDate = new Date(inputDate).getTime();
 
     function updateCountdown() {
@@ -19,3 +25,6 @@ function setCountdown() {
 
     setInterval(updateCountdown, 1000);
 }
+
+// функция которая отрабатывет отчёт часов/минут/секунд
+// выводит на экран подходящие названия единиц времени.
