@@ -20,16 +20,18 @@ const randomNumber = () => {
     )
 }
 
-
 randomNumber().then(argum => {
     resultOutput.textContent = argum;
     randomNumberGeneratorBtn.textContent = '';
+    setInterval(reloadGame, 3000);
+    
     
 }).catch(Error => {
     resultOutput.textContent = Error;
     randomNumberGeneratorBtn.textContent = '';
+    reloadGame;
 })
 
-
+const reloadGame = () => setInterval(location.reload(), 3000);
 
 

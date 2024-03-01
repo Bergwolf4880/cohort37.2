@@ -1,11 +1,11 @@
 body{
-    background-color: rgba(0, 0, 0, 0.819);
+    background-color: rgba(0, 0, 0, 0.922);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 #res{
-    color: rgba(0, 0, 0, 0.664);
+    color: rgba(0, 0, 0, 0.676);
     font-size: 2rem;
     font-weight: 600;
 }
@@ -17,7 +17,7 @@ body{
 .circle {
     margin-top: 50%;
     border-radius: 50%;
-    background: linear-gradient(190deg, rgb(255, 209, 149), rgb(112, 224, 244));
+    background: linear-gradient(190deg, rgba(193, 23, 0, 0.633), rgb(255, 230, 0));
     text-align: center;
     font-family: 'Space Mono', monospace;
 }
