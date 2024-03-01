@@ -27,9 +27,9 @@ const coundownClock = () => {
 
 const inputHandler = (evt) => {
     inputValue = evt.target.value;
-    countdownMonitor.textContent = inputValue;
 
 };
+
 
 userInputTime.addEventListener('input', inputHandler);
 startButton.addEventListener('click', coundownClock);
