@@ -1,7 +1,7 @@
 const submitButton = document.querySelector('#submit');
 const inputDate = document.getElementById("countdownDate");
 const inputTime = document.getElementById("inputField");
-const countdownDate = new Date(inputDate).getTime();
+const countdownDate = inputDate.valueAsDate.getTime();
 
 let inputValue;
 
@@ -29,33 +29,51 @@ function setCountdown() {
 
 
 
-
-function dateCountdown() {
-    const now = new Date().getTime();
-    const timeLeft = countdownDate - now;
-
+const funcInterval = (timeLeft) => {
     const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
     const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-    setInterval(countdownTimer(days, hours, minutes, seconds), 1000);
+    countdownTimer(days, hours, minutes, seconds)
 }
 
 
 
+function dateCountdown() {
+    
+    const doInterval = () => {
+        const now = new Date().getTime();
+        const timeLeft = countdownDate - now;
+
+        funcInterval(timeLeft)
+    }
+
+    setInterval(doInterval, 1000);
+}
+
+
 const timeCountdown = () => {
 
+    const doInterval = () => {
+        timeDate = inputTime.valueAsDate;
+        const now = new Date().getTime();
+        countdownDate = now + timeDate.getTime(); // counts time in milliseconds 
+        
 
-    const funcInterval = () => {
-        countdownTimer(0, 0, 0, inputValue)
-        inputValue -= 1;
 
-        if (inputValue <= -1) {
-            clearInterval(idI);
-        }
+        const timeLeft = countdownDate - now;
+
+        funcInterval(timeLeft)
+
+        // countdownTimer(0, 0, 0, inputValue)
+        // inputValue -= 1;
+
+        // if (inputValue <= -1) {
+        //     clearInterval(idI);
+        // }
     }
-    const idI = setInterval(funcInterval, 1000);
+    const idI = setInterval(doInterval, 1000);
 };
 
 
