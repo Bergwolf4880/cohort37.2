@@ -44,9 +44,15 @@ function inputCurrencyFromHandler(event) {
 const submitButtonHandler = (evt) => {
     evt.preventDefault();
     userChoice2 = currencyToValue(currencyTo);
+    console.log(currencyTo);
     let resultValue = calculator(userChoice1, userChoice2, amount);
     result.textContent = resultValue;
+    setInterval(reloadPage, 5000);
 };
+
+
+    const reloadPage = () => location.reload();
+
 
 currencyData('https://openexchangerates.org/api/latest.json?app_id=c56da6a380da489ea5745895577c2ac4');
 
