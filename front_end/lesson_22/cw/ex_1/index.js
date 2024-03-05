@@ -32,12 +32,14 @@ githubData.then((response) => { return response.json() })
         console.log(resultObject);
         return resultObject.repos_url;
     })
- .then((repos) => {
-    console.log(repos);
-    const githubDataRepos = getGitHubData(repos);
-    githubDataRepos.then((response) => {return response.json()
-    .then((resultOBject) => {console.log(resultOBject[0].name);})})
- })
+    .then((repos) => {
+        console.log(repos);
+        const githubDataRepos = getGitHubData(repos);
+        githubDataRepos.then((response) => {
+            return response.json()
+                .then((resultOBject) => { console.log(resultOBject[0].name); })
+        })
+    })
 
 
 
