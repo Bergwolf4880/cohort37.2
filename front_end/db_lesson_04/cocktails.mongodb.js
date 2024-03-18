@@ -26,13 +26,13 @@ db.drink.insertMany(
       ]
 );
 
-db.drink.find().sort({price: -1}).limit(1);
+// db.drink.find().sort({price: -1}).limit(1);
 
-db.drink.find().sort({price: 1}).limit(3);
+// db.drink.find().sort({price: 1}).limit(3);
 
-db.drink.find().sort({strength: -1}).limit(1);
+// db.drink.find().sort({strength: -1}).limit(1);
 
-db.drink.find({tags: 'крепкий'});
+// db.drink.find({tags: 'крепкий'});
 
-db.drink.find({ tags: 'крепкий' }, { name: 1, _id: 0 }).limit(1);
+db.drink.find({ tags: { $in: ['крепкий','вино']}}, { name: 1, _id: 0 }).limit(2);
 

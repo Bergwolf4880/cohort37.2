@@ -12,10 +12,10 @@ use("school_db");
 // });
 
 // Массивы - добавление нескольких пользователей
-db.users.insertMany([
-  { name: "Egor", age: 25 },
-  { name: "Ded Igor", age: 76 },
-]);
+// db.users.insertMany([
+//   { name: "Egor", age: 25 },
+//   { name: "Ded Igor", age: 76 },
+// ]);
 
 // db.users.insertOne({
 //   name: "John",
@@ -48,7 +48,7 @@ db.users.insertMany([
 // Но как найти всех пользователей по значениям?
 // передадим соответвующий параметр в find
 // найдем человека с возрастом 34
-// db.users.insertOne({name: "Anna", age: 34});
+//  db.users.insertOne({name: "Anna", age: 34});
 // db.users.find({age: 34});
 
 // найдем первого попавшегося удовлетворяющиего условию
@@ -107,7 +107,7 @@ db.users.insertMany([
 
 // Логическое и - $and
 // найдем человека с возрастом 34 и именем != анна
-// db.users.find({$and: [{age: 34}, {name:{$ne: "Anna"}}]});
+// db.users.find({$and: [{age: 34}, {name:{$ne: "Anna"}}],});
 
 // Чаще всего можем обойтись без and
 // db.users.find({age: 34, name: {$ne: "Anna"}});
@@ -118,6 +118,7 @@ db.users.insertMany([
 // Отрицание
 // все у кого возраст не больше семидесяти
 // db.users.find({age: {$not: {$gt: 70}}});
+// db.users.find({age:  {$lte: 70}});
 
 // Exist - проверка наличия поля - $exist
 // все у кого есть поле age
@@ -135,12 +136,13 @@ db.users.insertMany([
 // db.users.find({$expr: {$gt: ["$salary", "$costs"]}});
 
 // Вывести тех, кто не живет по средствам: salary < costs
-// db.users.find({$expr: {$lt: ["$salary", "$costs"]}});
+// db.users.find({$expr: {$gt: ["$salary", "$costs"]}});
 
-//
+
 // db.users.insertMany([
 //   {name: "John Snow", hobbys: ["swords", "bows", "wolfs", "red-head"], age: 20},
-//   {name: "Han Solo", hobbys: ["space", "blasters"], age: 36}
+//   {name: "Han Solo", hobbys: ["space", "blasters"], age: 36},
+//   {name: "Lol", hobbys: ["space"], age: 36},
 // ]);
 
 // выбрать людей с хотя одним из указанных хобби: "space", "snowboard"
@@ -148,3 +150,7 @@ db.users.insertMany([
 
 // Все  кто не интересуется "space", "snowboard"
 // db.users.find({ hobbys: { $nin: ["space", "snowboard"] } });
+
+// db.users.find({ $and: [{ hobbys: "space"}, {hobbys: "blasters"}]})
+
+// db.users.drop();
