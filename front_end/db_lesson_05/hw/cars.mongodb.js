@@ -214,7 +214,7 @@ db.owners.aggregate([
         }
     },
     {
-        $unwind: "$cars"
+        $unwind: "$cars"  // используется для раскрытия массива
     },
     {
         $match: {
