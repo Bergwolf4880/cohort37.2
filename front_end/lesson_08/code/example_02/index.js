@@ -1,11 +1,31 @@
-const isSubscribe = true;
+const inputHeightElement = document.querySelector('#heightInput');
+inputHeightElement.addEventListener('input', inputHeightFieldInput);
 
-let discount = 15;
+const inputWeightElement = document.querySelector('#weighInput');
+inputWeightElement.addEventListener('input', inputWeightFieldInput);
 
-// if (isSubscribe) {
-//     discount = discount + 10;
-// }
+let userHeightInput;
+let userInputWeight;
 
-discount = discount + Number(isSubscribe)*10;
+const calculateButtonElemnt = document.querySelector('.button');
+const bmiOutput = document.querySelector('#result1');
+calculateButtonElemnt.addEventListener('click', submitButtonHandler);
 
-console.log(discount);
+
+const inputHeightFieldInput = (evt)=> {
+    userHeightInput = Number(evt.target.value);
+    console.log(userHeightInput);
+}
+
+
+const inputWeightFieldInput = (evt)=> {
+    userInputWeight = Number(evt.target.value);
+    console.log(userInputWeight);
+}
+
+const submitButtonHandler = () => {
+    console.log(userHeightInput);
+    const result = Math.ceil(userInputWeight/(userHeightInput**2)); 
+    bmiOutput.textContent = result;
+    
+}

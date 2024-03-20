@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main-container{
+    display: grid;
+    height: 100vh;
+    background-color: bisque;
+    grid-template-rows: 200px 100px 1fr 1fr 1fr 200px;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "section"
+    "article"
+    "aside"
+    "footer"
+    ;
+    
+}
+
+@media screen and (min-width: 768px){
+.main-container{
+    grid-template-rows: 200px 100px 1fr 1fr 200px;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: 
+    "header header"
+    "nav nav"
+    "section aside"
+    "article aside"
+    "footer footer"
+    ;
+    
+}
+
+}
+
+.card{
+    background-color: rgb(05, 64, 35);
+    height: 50px;   
+    width: 50px;
+}
+
+header{
+    background-color: rgb(239, 197, 250);
+    grid-area: header;
+}
+nav{
+    background-color: rgb(41, 225, 238);
+    grid-area: nav;
+}
+.main-content{
+    background-color: blueviolet;
+}
+.grid-section{
+    grid-area: section;
+    display: grid;
+    background-color: rgb(245, 144, 4);
+    grid-template-columns: repeat(4, 100px); 
+    justify-items: center;
+    align-items: center;
+    /* justify-items : stretch;
+    align-items: stretch;           // child element should not have height and width
+    column-gap: 10px; */
+    justify-content: space-between;
+
+}
+.grid-article{
+    grid-area: article;
+    background-color: blueviolet;;
+}
+.grid-aside{
+    grid-area: aside;
+    background-color: rgb(171, 94, 0);
+}
+footer{
+    background-color: chartreuse;
+    grid-area: footer;
+}
