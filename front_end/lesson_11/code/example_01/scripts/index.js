@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 let todoList = [
     {task: "Купить молоко", done: false, deadline: "2024-02-23"},
     {task: "Заплатить за интернет", done: true, deadline: "2024-02-20"},
@@ -68,3 +69,18 @@ inputElement.addEventListener('input', inputHandler);
 const btnHandler = (evt) => {
     evt.preventDefault();
 }
+=======
+console.log("Hello world")
+
+const secondItemElement = document.querySelector('#second-item')
+
+// console.log(document);
+
+//console.log(secondItemElement.innerHTML)
+
+// const secondItemElementClick = () => {secondItemElement.classList.toggle('list-item_done');}; //add //remove...
+const secondItemElementClick = () => {secondItemElement.style.backgroundColor="blue";}
+secondItemElement.addEventListener('click', secondItemElementClick);
+
+
+>>>>>>> lesson_11

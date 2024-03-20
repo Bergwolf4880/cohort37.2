@@ -1,0 +1,47 @@
+body{
+    background-color: rgba(0, 0, 0, 0.922);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#res{
+    color: rgba(0, 0, 0, 0.676);
+    font-size: 2rem;
+    font-weight: 600;
+}
+#btn{
+    color: rgba(0, 0, 0, 0.613);
+    font-size: 2rem;
+    font-weight: 600;
+}
+.circle {
+    margin-top: 50%;
+    border-radius: 50%;
+    background: linear-gradient(190deg, rgba(193, 23, 0, 0.633), rgb(255, 230, 0));
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+}
+.circle-1 {
+    height: 350px;
+    width: 350px;
+    opacity: 0.8;
+    animation-timing-function: cubic-bezier(0.54, 0.085, 0.5, 0.92);
+    animation-iteration-count: infinite;
+    animation-name: float;
+    animation-duration: 6s;
+    animation-delay: 3.5s;
+    animation-direction: alternate;
+    border:0;
+}
+  
+@keyframes float {
+    0% {
+      transform: rotateX(0deg) translateY(0px);
+    }
+    50% {
+      transform: rotateX(0deg) translateY(1px) translateX(5px);
+    }
+    100% {
+      transform: rotateX(0deg) translateY(0px) translateX(1px);
+    }
+  }

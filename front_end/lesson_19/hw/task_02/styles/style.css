@@ -1,0 +1,133 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    height: calc(100vh - 200px);
+}
+.footer{
+    position:absolute;
+    width: 100%;
+    bottom:0;
+    padding-top: 20px;
+    height:150px;
+    background-color: rgb(57, 62, 70);
+    font-family: Arial, Helvetica, sans-serif;
+    color:rgba(255, 255, 255, 0.656);
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    grid-template-columns: repeat(3, 200px) ; 
+    grid-template-areas: 
+    "app about contact"
+    "app_content about_content contact_content";
+    justify-items: left;
+    align-items:baseline;
+   
+}
+.contact_content{
+    grid-area: contact_content;
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+    }
+
+.social_box{
+        display: flex;
+        flex-direction: column;
+    }
+.social{
+        padding-top:20px;
+        height: 30px;
+    }
+.app{
+        grid-area: app;
+        font-weight:800;
+        margin: 15px 10px 10px 10px ;
+    }
+.app_content{
+        grid-area: app_content;
+        margin: 0 0 0 10px ;
+    }
+.about{
+        grid-area: about; 
+        font-weight:800;
+    }
+.about_content{
+        grid-area: about_content;
+        
+    }
+.contact{
+        grid-area: contact;
+        font-weight:800;      
+    }
+
+
+
+@media screen and (max-width: 768px){
+    .footer{
+        position:absolute;
+        bottom:0;
+        padding-top: 20px;
+        height:auto;
+        background-color: rgb(57, 62, 70);
+        color: rgba(255, 255, 255, 0.656);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, 60px);
+        grid-template-areas: 
+        "app" 
+        "app_content"
+        "about"
+        "about_content"
+        "contact"
+        "sn"
+        "contact_content"
+        ;
+        justify-items: left;
+        align-content: center;
+        padding: 15px;
+    }
+    .sn{
+        grid-area: sn;
+        display: flex;
+        flex-direction: row;
+        
+    }
+    .social{
+        padding-top:10px;
+        height: 30px;
+    
+    }
+    .app{
+        grid-area: app;
+        font-weight:600;
+        margin: 15px 0 10px 0 ;
+
+    }
+    .app_content{
+        grid-area: app_content;
+        
+    }
+    .about{
+        grid-area: about; 
+        font-weight:600;
+        align-content: center;
+        margin: 15px 0 10px 0 ;
+           
+    }
+    .about_content{
+        grid-area: about_content;
+        
+    }
+    .contact{
+        grid-area: contact;
+        font-weight:600;
+        margin: 15px 0 10px 0 ;
+        
+    }
+    .contact_content{
+        grid-area: contact_content;
+    }
+
+}
+

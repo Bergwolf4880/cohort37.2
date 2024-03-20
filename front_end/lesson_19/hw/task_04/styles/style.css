@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+.container{
+    background-image: linear-gradient(to right, rgba(128, 128, 128, 0.413), slategray);
+    grid-template-rows: 1fr;
+    display: grid;
+    gap:10px;
+    align-items: center;
+    justify-items: center;
+}
+@media screen and (min-width: 640px){
+    .container{
+    background-image: linear-gradient(to right, rgba(128, 128, 128, 0.413), slategray);
+    grid-template-columns: repeat(6, 1fr);
+    display: grid;
+    gap:10px;
+    align-items: center;
+    justify-items: center;
+}
+}
+
+
+.item{
+    font-size: larger;
+    background-color: transparent;
+    border: 0;
+    font-weight: 500;
+    text-decoration: none;
+    color: rgba(33, 33, 33, 0.718);
+    font-family: Arial, Helvetica, sans-serif;
+
+    
+    
+}
+.item:hover{
+    border: solid 1px rgba(112, 128, 144, 0.232);
+
+}
+
+
+
+.logo{
+    margin-right: 50px;
+    height: 50px;
+}
